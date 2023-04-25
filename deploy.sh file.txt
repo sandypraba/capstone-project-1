@@ -1,0 +1,33 @@
+#!/bin/bash
+#Define the image name and tag
+IMAGE_NAME="reactjsimage"
+IMAGE_TAG="latest"
+
+# Define the server information
+SERVER_USER="ubuntu"
+SERVER_IP="18.207.227.223 "
+
+# Transfer the Docker image to the server
+echo "Transferring image to server..."
+docker save "${reactjsimage}:${latest}" | \
+    ssh "${ubuntu}@${18.207.227.223 }" \
+    "docker load && docker tag ${reactjsimage}:${latest} ${reactjsimage}:${latest} && docker rmi \$(docker images -f dangling=true -q)"
+
+# Deploy the Docker image on the server
+echo "Deploying image on server..."
+ssh "${ubuntu}@${18.207.227.223 }" \
+    "docker stop ${reactjsimage} && docker rm ${reactjsimage} || true"  
+ # remove existing container, if any
+ssh "${ubuntu}@${18.207.227.223 }" \
+ "docker stop ${reactjsimage} && docker rm ${reactjsimage} || true"  
+ # remove existing container, if any
+ssh "${ubuntu}@${18.207.227.223 }" \
+    "docker run -d --name ${reactjsimage} -p 80:80 ${reactjsimage}:${latest}"
+
+# Check if the deployment succeeded
+if [ $? -eq 0 ]; then
+  echo "Deployment succeeded"
+else
+  echo "Deployment failed"
+  exit 1
+fi

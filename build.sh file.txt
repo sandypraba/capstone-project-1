@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Define the image name and tag
+IMAGE_NAME="reactjsimage"
+IMAGE_TAG="latest"
+
+# Build the React.js app
+npm install
+npm run build
+
+# Build the Docker image
+docker build -t "${reactjsimage}:${latest}" .
+
+# Check if the build succeeded
+if [ $? -eq 0 ]; then
+  echo "Build succeeded"
+else
+  echo "Build failed"
+  exit 1
+fi

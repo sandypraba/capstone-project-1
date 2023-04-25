@@ -1,0 +1,7 @@
+version: "3"
+services:
+  reactjs-demo:
+    container_name: reactjs
+    image: reactjsimage
+    ports:
+      - "3000:3000"

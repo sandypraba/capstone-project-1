@@ -1,0 +1,25 @@
+#Base image
+From node:latest
+
+#working directory
+WORKDIR /app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+#copy package.json to /app
+COPY package.json ./
+COPY package-lock.json ./
+
+
+#npm install
+RUN npm install --silent
+RUN npm install react-scripts@5.0.1 -g --silent
+
+#copy all files
+COPY . ./
+
+#port expose
+EXPOSE 3000
+
+#run the code
+CMD ["npm", "start"]
