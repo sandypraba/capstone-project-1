@@ -13,6 +13,6 @@ url: http://localhost:80
 ![image](https://user-images.githubusercontent.com/118245606/234301466-ffcf1372-2a59-4ca2-8cb2-6b97eee2a83e.png)
 ![image](https://user-images.githubusercontent.com/118245606/234301573-d8e398a4-c13e-4806-8a28-37ca465d23bc.png)
 ![image](https://user-images.githubusercontent.com/118245606/234301644-1574bbc2-f3e0-4d10-a6e2-0f3f6eed7ceb.png)
-![image](https://user-images.githubusercontent.com/118245606/234302298-444f136d-171f-4fcc-bd7c-7d6ff7ba3b8a.png)
+
 ![image](https://user-images.githubusercontent.com/118245606/234302417-55e88b26-3c83-4284-9a21-5136c823859b.png)
 ![image](https://user-images.githubusercontent.com/118245606/234302520-992151f6-c056-4a9f-9a78-4a40f43a20e6.png)
